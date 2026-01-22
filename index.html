@@ -149,10 +149,10 @@
           <!-- 视频下方的说明文字 -->
           <div style="text-align: left; max-width: 800px; margin: 1rem auto;">
             <ul>
-              <li><strong><em>From Passive to Active Perception</em></strong>: Unlike traditional VLA models that rely on static, end-effector-centric cameras, ActiveVLA treats perception as an active hypothesis-testing process, enabling the robot to "look around" and "look closer".</li>
-              <li><strong><em>Active Viewpoint Selection</em></strong>: The model autonomously determines optimal camera perspectives to maximize visibility and task relevance while minimizing occlusions, crucial for cluttered environments.</li>
-              <li><strong><em>Active 3D Zoom-in</em></strong>: We introduce a mechanism to identify and selectively enhance high-resolution views of task-critical regions, simulating an optical zoom effect for fine-grained manipulation.</li>
-              <li><strong><em>Superior Performance & Generalization</em></strong>: ActiveVLA achieves state-of-the-art results on RLBench (91.8% success rate), COLOSSEUM, and GemBench, and demonstrates strong robustness in real-world tasks involving severe occlusions.</li>
+              <li><strong><em>From View-Agnostic Tokens to 3D-Consistent Fusion</em></strong>: Prior bimanual VLAs treat multi-view inputs as an orderless token set, yielding fragile spatial beliefs under occlusions and viewpoint shifts; PEAfowl enforces cross-view 3D alignment to produce consistent spatial tokens.</li>
+              <li><strong><em>From Noisy Depth as a Liability to Depth as a Prior</em></strong>: Commodity depth often destabilizes learning and hurts transfer; PEAfowl distills geometry-aware priors into per-token depth predictions during training, improving real-sensor robustness with zero test-time overhead.</li>
+              <li><strong><em>From Global Text Conditioning to Targeted Evidence Retrieval</em></strong>: Global language conditioning tends to be coarse and instruction-agnostic in clutter; PEAfowl uses text-as-query readout to retrieve and aggregate instruction-relevant visual evidence for sharper grounding.</li>
+              <li><strong><em>From Unstable Generalization to Reliable Multi-Task Transfer</em></strong>: Existing bimanual VLAs degrade sharply under multi-task learning and scene variations; PEAfowl delivers consistent gains in simulation and real-robot success across diverse tasks.</li>
             </ul>
           </div>
         </div>
