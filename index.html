@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation">
+  <meta name="keywords" content="Active Perception, Vision-Language-Action, Robotic Manipulation, 3D Vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- 请替换为你自己的 Google Analytics ID，如果没有可以注释掉 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zhenyangliu.github.io/">Zhenyang Liu</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="">Yongchong Gu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Yikai Wang</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Xiangyang Xue</a><sup>1&#8224;</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Yanwei Fu</a><sup>1,2&#8224;</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Fudan University,</span>
+            <span class="author-block"><sup>2</sup>Shanghai Innovation Institute,</span>
+            <span class="author-block"><sup>3</sup>Nanyang Technological University</span>
+          </div>
+          
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"> <sup>&#8224;</sup>Corresponding authors.</span>
+          </div>
+
+          <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2601.08325v1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ZhenyangLiu/ActiveVLA-Injecting-Active-Perception-into-VLA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/ZhenyangLiu/ActiveVLA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- 视频部分 -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">ActiveVLA: Injecting Active Perception into VLA for Precise Manipulation</h2>
+        <div class="content has-text-justified">
+          <div class="has-text-centered" style="position: relative;">
+            <!-- 请确保替换为 ActiveVLA 的演示视频 -->
+            <video id="activevla-video" autoplay muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./static/videos/demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <!-- 静音开关按钮 -->
+            <button id="unmute-btn" 
+                    style="
+                      position: absolute;
+                      bottom: 10px;
+                      right: 10px;
+                      padding: 0.5rem 1rem;
+                      font-size: 0.9rem;
+                      cursor: pointer;
+                      background-color: rgba(0,0,0,0.5);
+                      color: white;
+                      border: none;
+                      border-radius: 4px;
+                    ">
+              开启声音
+            </button>
+          </div>
+          <!-- 视频下方的说明文字 -->
+          <div style="text-align: left; max-width: 800px; margin: 1rem auto;">
+            <ul>
+              <li><strong><em>From Passive to Active Perception</em></strong>: Unlike traditional VLA models that rely on static, end-effector-centric cameras, ActiveVLA treats perception as an active hypothesis-testing process, enabling the robot to "look around" and "look closer".</li>
+              <li><strong><em>Active Viewpoint Selection</em></strong>: The model autonomously determines optimal camera perspectives to maximize visibility and task relevance while minimizing occlusions, crucial for cluttered environments.</li>
+              <li><strong><em>Active 3D Zoom-in</em></strong>: We introduce a mechanism to identify and selectively enhance high-resolution views of task-critical regions, simulating an optical zoom effect for fine-grained manipulation.</li>
+              <li><strong><em>Superior Performance & Generalization</em></strong>: ActiveVLA achieves state-of-the-art results on RLBench (91.8% success rate), COLOSSEUM, and GemBench, and demonstrates strong robustness in real-world tasks involving severe occlusions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 控制视频声音按钮
+    const video = document.getElementById('activevla-video');
+    const btn = document.getElementById('unmute-btn');
+
+    btn.addEventListener('click', () => {
+      if (video.muted) {
+        video.muted = false;
+        btn.textContent = '关闭声音';
+      } else {
+        video.muted = true;
+        btn.textContent = '开启声音';
+      }
+      video.play();
+    });
+  </script>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- 使用 Flexbox 居中 -->
+      <div class="has-text-centered">
+        <!-- 请替换为 ActiveVLA 的 Figure 1 (teaser.png) -->
+        <img src="./static/images/teaser.png" alt="ActiveVLA Teaser" style="width: 80%; height: auto;">
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">ActiveVLA</span> vs. Previous Methods. Traditional VLA systems often fail in tasks like "bring the apples on the table" because fixed cameras miss critical details or become occluded. In contrast, <strong>ActiveVLA</strong> leverages 3D scene understanding to freely place virtual cameras and synthesize optimal viewpoints, enabling robots to adjust their view for clearer, more informative observations and thus achieve more reliable manipulation performance even under occlusion.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent advances in robot manipulation have leveraged pre-trained vision-language models (VLMs) and explored integrating 3D spatial signals into these models for effective action prediction, giving rise to the promising vision-language-action (VLA) paradigm. However, most existing approaches overlook the importance of active perception: they typically rely on static, wrist-mounted cameras that provide an end-effector-centric viewpoint. As a result, these models are unable to adaptively select optimal viewpoints or resolutions during task execution, which significantly limits their performance in long-horizon tasks and fine-grained manipulation scenarios. 
+          </p>
+          <p>
+            To address these limitations, we propose <strong>ActiveVLA</strong>, a novel vision-language-action framework that empowers robots with active perception capabilities for high-precision, fine-grained manipulation. ActiveVLA adopts a coarse-to-fine paradigm, dividing the process into two stages: (1) <strong>Critical region localization</strong>, where it projects 3D inputs onto multi-view 2D projections to identify critical 3D regions; and (2) <strong>Active perception optimization</strong>, where it uses an active view selection strategy to choose optimal viewpoints and applies a 3D zoom-in to improve resolution in key areas. Extensive experiments demonstrate that ActiveVLA achieves precise 3D manipulation and outperforms state-of-the-art baselines on three simulation benchmarks (RLBench, COLOSSEUM, GemBench). Moreover, ActiveVLA transfers seamlessly to real-world scenarios, enabling robots to learn high-precision tasks in complex environments.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Framework. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">The Framework of ActiveVLA</h2>
+        <div class="content has-text-justified">
+          <!-- 图片居中，请替换为 ActiveVLA 的 Figure 2 (pipeline.png) -->
+          <div class="has-text-centered">
+            <img src="./static/images/pipeline.png" alt="ActiveVLA Pipeline" style="width: 100%; height: auto;">
+          </div>
+          <p>
+            ActiveVLA adopts a two-stage, <strong>coarse-to-fine</strong> strategy. In the <strong>coarse stage</strong>, three orthographic projections of the 3D scene and a language instruction are processed by the VLM backbone (PaliGemma) to generate 2D heatmaps, which are then back-projected to locate the most relevant 3D region. 
+          </p>
+          <p>
+            In the <strong>fine stage</strong>, an <strong>Active Perception</strong> module takes over. It first performs <strong>Active Viewpoint Selection</strong> to choose new camera views that maximize visibility and diversity based on the identified region. Then, it executes an <strong>Active 3D Zoom-in</strong> strategy to render high-resolution details of the critical area. The refined visual inputs are fed back into the VLM to predict heatmaps for key end-effector positions, while an action decoder outputs the final 3D action (rotation, gripper state, etc.). This closed-loop design allows the robot to "look closer" before acting.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Framework. -->
+  </div>
+</section>
+
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <!-- 并排图片，请替换为 ActiveVLA 的实验结果图 (如 Figure 3 或 Figure 4) -->
+          <div class="columns">
+            <div class="column">
+              <img src="./static/images/quantative_1.png" alt="RLBench Simulation Results" style="width: 100%; height: auto;">
+              <p class="is-size-7 has-text-centered">Fine-grained manipulation in RLBench simulation.</p>
+            </div>
+            <div class="column">
+              <img src="./static/images/quantative_2.png" alt="COLOSSEUM Simulation Results" style="width: 100%; height: auto;">
+              <p class="is-size-7 has-text-centered">Fine-grained manipulation in COLOSSEUM simulation.</p>
+            </div>
+          </div>
+
+          <ul class="content">
+            <li><strong>Simulation Benchmarks:</strong> ActiveVLA achieves a new state-of-the-art on RLBench with a <strong>91.8%</strong> average success rate, surpassing previous methods like BridgeVLA and 3D Diffuser Actor. It also dominates on the COLOSSEUM benchmark (robustness to perturbations) and GemBench (generalization).</li>
+            <li><strong>Real-World Robustness:</strong> As shown in the figures, ActiveVLA effectively handles complex real-world scenarios involving severe occlusions (e.g., retrieving a towel from layered drawers, grasping an occluded banana). By actively selecting viewpoints and zooming in, it can perceive fine-grained geometric details that static cameras miss.</li>
+            <li><strong>Ablation Studies:</strong> Experiments confirm that both Active View Selection (A-VS) and Active 3D Zoom-in (A-3Z) are crucial. A-VS guides <em>where</em> to look, and A-3Z determines <em>how closely</em> to observe, forming a powerful hierarchical perception strategy.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Results -->
+  </div>
+</section>
+
+<!-- Figure 3: Qualitative Results (Simulation) -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results: Coarse-to-Fine Perception</h2>
+        <div class="content has-text-justified">
+          <p>
+            We visualize the internal reasoning process of ActiveVLA on fine-grained manipulation tasks. This corresponds to <strong>Figure 3</strong> in the paper.
+          </p>
+          <!-- 请确保图片路径正确，对应 Figure 3 -->
+          <div class="has-text-centered">
+            <img src="./static/images/visualization_1.png" alt="Qualitative results of fine-grained manipulation" style="width: 100%; height: auto;">
+          </div>
+          <p>
+            As shown above, the process is divided into two stages:
+            <br>
+            <strong>1. Coarse Stage (Left of dotted line):</strong> The model projects 3D modalities onto orthographic images (a) and predicts heatmaps to roughly mark critical regions (b).
+            <br>
+            <strong>2. Fine Stage (Right of dotted line):</strong> Based on these regions, ActiveVLA performs <strong>Active View Selection</strong> (c) to find the best angle and <strong>Active 3D Zoom-in</strong> (d) to capture high-resolution details. This enables precise manipulation in complex scenes like "Sweeping dirt to the dustpan" or "Placing jello in the cupboard".
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Figure 4: Real-World Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Real-World Experiments: Handling Severe Occlusions</h2>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate ActiveVLA in real-world scenarios characterized by complex spatial structures and severe occlusions. This corresponds to <strong>Figure 4</strong> in the paper.
+          </p>
+          <!-- 请确保图片路径正确，对应 Figure 4 -->
+          <div class="has-text-centered">
+            <img src="./static/images/visualization_2.png" alt="Real-world manipulation tasks" style="width: 100%; height: auto;">
+          </div>
+          <p>
+            The figure demonstrates ActiveVLA's capability in four challenging tasks:
+          </p>
+          <ul>
+            <li><strong>Pick up the banana (Occluded):</strong> The banana is hidden by other fruits. ActiveVLA changes the viewpoint to find it.</li>
+            <li><strong>Stack blocks (Occluded):</strong> The target red cube is hidden behind other blocks. The model finds a view to reveal it.</li>
+            <li><strong>Cup on holder (Occluded):</strong> The cup is obscured by the holder structure.</li>
+            <li><strong>Towel in drawer (Occluded):</strong> The towel is inside a drawer, requiring the robot to look inside.</li>
+          </ul>
+          <p>
+            In all cases, ActiveVLA actively perceives the environment to resolve ambiguities and precisely completes the tasks, demonstrating strong generalization to real-world constraints.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            Theme modified from 
+            <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
