@@ -163,7 +163,7 @@
     </div>
   </div>
 
-  <script>
+  <!-- <script>
     // 控制视频声音按钮
     const video = document.getElementById('activevla-video');
     const btn = document.getElementById('unmute-btn');
@@ -178,7 +178,7 @@
       }
       video.play();
     });
-  </script>
+  </script> -->
 </section>
 
 <section class="hero teaser">
@@ -187,7 +187,7 @@
       <!-- 使用 Flexbox 居中 -->
       <div class="has-text-centered">
         <!-- 请替换为 ActiveVLA 的 Figure 1 (teaser.png) -->
-        <img src="./static/images/Fig1.png" alt="PEAfowl architecture" style="width: 80%; height: auto;">
+        <img src="./static/images/Fig2.png" alt="PEAfowl architecture" style="width: 80%; height: auto;">
       </div>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">PEAfowl architecture</span>. Traditional bimanual VLA systems often fail in cluttered, multi-object scenes because multi-view inputs are treated as view-agnostic token concatenations and language is injected only as global conditioning, leading to brittle 3D understanding and coarse, instruction-agnostic attention under occlusions and viewpoint shifts. In contrast, <strong>PEAfowl</strong> explicitly builds 3D-consistent multi-view representations via geometry-guided fusion (distributional depth, differentiable 3D lifting, and cross-view neighbor aggregation) and replaces global text conditioning with a text-as-query readout over frozen CLIP features, allowing the policy to retrieve instruction-relevant evidence and remain stable under scene variations. To further handle noisy and missing commodity depth in the real world, PEAfowl applies training-only depth distillation from a pretrained depth teacher—injecting geometry-aware priors with zero test-time overhead—resulting in more reliable bimanual manipulation and sim-to-real transfer even under challenging tasks.
@@ -217,16 +217,14 @@
   </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
-    <!-- Framework. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">The Framework of ActiveVLA</h2>
+        <h2 class="title is-3">PEAfowl Architecture</h2>
         <div class="content has-text-justified">
-          <!-- 图片居中，请替换为 ActiveVLA 的 Figure 2 (pipeline.png) -->
           <div class="has-text-centered">
-            <img src="./static/images/pipeline.png" alt="ActiveVLA Pipeline" style="width: 100%; height: auto;">
+            <img src="./static/images/Fig2.png" alt="PEAfowl architecture" style="width: 100%; height: auto;">
           </div>
           <p>
             ActiveVLA adopts a two-stage, <strong>coarse-to-fine</strong> strategy. In the <strong>coarse stage</strong>, three orthographic projections of the 3D scene and a language instruction are processed by the VLM backbone (PaliGemma) to generate 2D heatmaps, which are then back-projected to locate the most relevant 3D region. 
@@ -237,19 +235,16 @@
         </div>
       </div>
     </div>
-    <!--/ Framework. -->
   </div>
-</section>
+</section> -->
 
   
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
-    <!-- Results -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified">
-          <!-- 并排图片，请替换为 ActiveVLA 的实验结果图 (如 Figure 3 或 Figure 4) -->
           <div class="columns">
             <div class="column">
               <img src="./static/images/quantative_1.png" alt="RLBench Simulation Results" style="width: 100%; height: auto;">
@@ -269,23 +264,38 @@
         </div>
       </div>
     </div>
-    <!--/ Results -->
   </div>
-</section>
+</section> -->
 
 <!-- Figure 3: Qualitative Results (Simulation) -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Qualitative Results: Coarse-to-Fine Perception</h2>
+        <h2 class="title is-3">Qualitative Results</h2>
+        <h2 class="title is-4">Cross-view Token Consistency</h2>
         <div class="content has-text-justified">
           <p>
             We visualize the internal reasoning process of ActiveVLA on fine-grained manipulation tasks. This corresponds to <strong>Figure 3</strong> in the paper.
           </p>
-          <!-- 请确保图片路径正确，对应 Figure 3 -->
           <div class="has-text-centered">
-            <img src="./static/images/visualization_1.png" alt="Qualitative results of fine-grained manipulation" style="width: 100%; height: auto;">
+            <img src="./static/images/Fig4.png" alt="Cross-view Token Consistency" style="width: 100%; height: auto;">
+          </div>
+          <p>
+            As shown above, the process is divided into two stages:
+            <br>
+            <strong>1. Coarse Stage (Left of dotted line):</strong> The model projects 3D modalities onto orthographic images (a) and predicts heatmaps to roughly mark critical regions (b).
+            <br>
+            <strong>2. Fine Stage (Right of dotted line):</strong> Based on these regions, ActiveVLA performs <strong>Active View Selection</strong> (c) to find the best angle and <strong>Active 3D Zoom-in</strong> (d) to capture high-resolution details. This enables precise manipulation in complex scenes like "Sweeping dirt to the dustpan" or "Placing jello in the cupboard".
+          </p>
+        </div>
+        <h2 class="title is-4">Depth-Distribution Predictions</h2>
+        <div class="content has-text-justified">
+          <p>
+            We visualize the internal reasoning process of ActiveVLA on fine-grained manipulation tasks. This corresponds to <strong>Figure 3</strong> in the paper.
+          </p>
+          <div class="has-text-centered">
+            <img src="./static/images/Fig5.png" alt="Depth-Distribution Predictions" style="width: 100%; height: auto;">
           </div>
           <p>
             As shown above, the process is divided into two stages:
