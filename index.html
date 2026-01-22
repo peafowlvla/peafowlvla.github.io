@@ -34,7 +34,10 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  <link rel="icon" type="image/svg+xml"
+  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%9A%3C/text%3E%3C/svg%3E">
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -184,7 +187,7 @@
       <!-- 使用 Flexbox 居中 -->
       <div class="has-text-centered">
         <!-- 请替换为 ActiveVLA 的 Figure 1 (teaser.png) -->
-        <img src="./static/images/Fig2.png" alt="PEAfowl architecture" style="width: 80%; height: auto;">
+        <img src="./static/images/Fig1.png" alt="PEAfowl architecture" style="width: 80%; height: auto;">
       </div>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">PEAfowl architecture</span>. Traditional bimanual VLA systems often fail in cluttered, multi-object scenes because multi-view inputs are treated as view-agnostic token concatenations and language is injected only as global conditioning, leading to brittle 3D understanding and coarse, instruction-agnostic attention under occlusions and viewpoint shifts. In contrast, <strong>PEAfowl</strong> explicitly builds 3D-consistent multi-view representations via geometry-guided fusion (distributional depth, differentiable 3D lifting, and cross-view neighbor aggregation) and replaces global text conditioning with a text-as-query readout over frozen CLIP features, allowing the policy to retrieve instruction-relevant evidence and remain stable under scene variations. To further handle noisy and missing commodity depth in the real world, PEAfowl applies training-only depth distillation from a pretrained depth teacher—injecting geometry-aware priors with zero test-time overhead—resulting in more reliable bimanual manipulation and sim-to-real transfer even under challenging tasks.
@@ -202,10 +205,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent advances in robot manipulation have leveraged pre-trained vision-language models (VLMs) and explored integrating 3D spatial signals into these models for effective action prediction, giving rise to the promising vision-language-action (VLA) paradigm. However, most existing approaches overlook the importance of active perception: they typically rely on static, wrist-mounted cameras that provide an end-effector-centric viewpoint. As a result, these models are unable to adaptively select optimal viewpoints or resolutions during task execution, which significantly limits their performance in long-horizon tasks and fine-grained manipulation scenarios. 
-          </p>
-          <p>
-            To address these limitations, we propose <strong>ActiveVLA</strong>, a novel vision-language-action framework that empowers robots with active perception capabilities for high-precision, fine-grained manipulation. ActiveVLA adopts a coarse-to-fine paradigm, dividing the process into two stages: (1) <strong>Critical region localization</strong>, where it projects 3D inputs onto multi-view 2D projections to identify critical 3D regions; and (2) <strong>Active perception optimization</strong>, where it uses an active view selection strategy to choose optimal viewpoints and applies a 3D zoom-in to improve resolution in key areas. Extensive experiments demonstrate that ActiveVLA achieves precise 3D manipulation and outperforms state-of-the-art baselines on three simulation benchmarks (RLBench, COLOSSEUM, GemBench). Moreover, ActiveVLA transfers seamlessly to real-world scenarios, enabling robots to learn high-precision tasks in complex environments.
+            Bimanual manipulation in cluttered scenes requires policies that remain stable under occlusions, viewpoint and scene variations. Existing vision-language-action models often fail to generalize because (i) multi-view features are fused via view-agnostic token concatenation, yielding weak 3D-consistent spatial understanding, and (ii) language is injected as global conditioning, resulting in coarse instruction grounding. In this paper, we introduce PEAfowl, a perception-enhanced multi-view VLA policy for bimanual manipulation. For spatial reasoning, PEAfowl predicts per-token depth distributions, performs differentiable 3D lifting, and aggregates local cross-view neighbors to form geometrically grounded, cross-view consistent representations. For instruction grounding, we propose to replace global conditioning with a Perceiver-style text-aware readout over frozen CLIP visual features, enabling iterative evidence accumulation. To overcome noisy and incomplete commodity depth without adding inference overhead, we apply training-only depth distillation from a pretrained depth teacher to supervise the depth-distribution head, providing perception front-end with geometry-aware priors. On RoboTwin 2.0 under domain-randomized setting, PEAfowl improves the strongest baseline by 23.0 pp in success rate, and real-robot experiments further demonstrate reliable sim-to-real transfer and consistent improvements from depth distillation.
           </p>
         </div>
       </div>
