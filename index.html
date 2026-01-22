@@ -276,33 +276,27 @@
         <h2 class="title is-4">Cross-view Token Consistency</h2>
         <div class="content has-text-justified">
           <p>
-            We visualize the internal reasoning process of ActiveVLA on fine-grained manipulation tasks. This corresponds to <strong>Figure 3</strong> in the paper.
+            we flatten the multi-view 2D tokens at the same feature level into a set of points, apply t-SNE to reduce the token embeddings to 3D, and then min–max normalize each dimension and map the resulting 3D coordinates directly to RGB channels. This produces a pseudo-colored “token image” for each view, which we use to inspect cross-view consistency.
           </p>
           <div class="has-text-centered">
-            <img src="./static/images/Fig4.png" alt="Cross-view Token Consistency" style="width: 100%; height: auto;">
+            <img src="./static/images/Fig5.png" alt="Cross-view Token Consistency" style="width: 100%; height: auto;">
           </div>
           <p>
-            As shown above, the process is divided into two stages:
-            <br>
-            <strong>1. Coarse Stage (Left of dotted line):</strong> The model projects 3D modalities onto orthographic images (a) and predicts heatmaps to roughly mark critical regions (b).
-            <br>
-            <strong>2. Fine Stage (Right of dotted line):</strong> Based on these regions, ActiveVLA performs <strong>Active View Selection</strong> (c) to find the best angle and <strong>Active 3D Zoom-in</strong> (d) to capture high-resolution details. This enables precise manipulation in complex scenes like "Sweeping dirt to the dustpan" or "Placing jello in the cupboard".
+            SEM exhibits stripe-like color patterns that correlate more with image coordinates, with weak color correspondence for the same physical regions across views. PEAfowl (Before Aggregation) already reveals clearer object structures, but still shows cross-view drift. After Cross-View Aggregation, the same objects and regions become more color- and boundary-consistent across views, indicating stronger cross-view, 3D-consistent token alignment.
           </p>
         </div>
         <h2 class="title is-4">Depth-Distribution Predictions</h2>
         <div class="content has-text-justified">
           <p>
-            We visualize the internal reasoning process of ActiveVLA on fine-grained manipulation tasks. This corresponds to <strong>Figure 3</strong> in the paper.
+            We visualize the predicted discrete depth distribution per token (<code>depth_prob</code>) by first normalizing it into a probability distribution, then computing the expected depth map
+            <code>E[d] = Σ_d p(d) · bin(d)</code>
+            using the depth bins, and finally normalizing the expected depth over the bin range and rendering it with a colormap. This allows a direct comparison of depth sharpness and completeness.
           </p>
           <div class="has-text-centered">
-            <img src="./static/images/Fig5.png" alt="Depth-Distribution Predictions" style="width: 100%; height: auto;">
+            <img src="./static/images/Fig6.png" alt="Depth-Distribution Predictions" style="width: 100%; height: auto;">
           </div>
           <p>
-            As shown above, the process is divided into two stages:
-            <br>
-            <strong>1. Coarse Stage (Left of dotted line):</strong> The model projects 3D modalities onto orthographic images (a) and predicts heatmaps to roughly mark critical regions (b).
-            <br>
-            <strong>2. Fine Stage (Right of dotted line):</strong> Based on these regions, ActiveVLA performs <strong>Active View Selection</strong> (c) to find the best angle and <strong>Active 3D Zoom-in</strong> (d) to capture high-resolution details. This enables precise manipulation in complex scenes like "Sweeping dirt to the dustpan" or "Placing jello in the cupboard".
+            SEM is more prone to blurred predictions and missing structures; PEAfowl w/o Depth Distillation already yields cleaner foreground/object contours; and full PEAfowl further improves boundary sharpness and region completeness, providing more stable geometric cues under noisy and incomplete commodity depth, which implicitly supports more reliable geometry-guided perception and downstream policy learning.
           </p>
         </div>
       </div>
@@ -348,8 +342,7 @@
       <div class="column is-8">
         <div class="content has-text-centered">
           <p>
-            Theme modified from 
-            <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>.
+            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>..
           </p>
         </div>
       </div>
