@@ -239,33 +239,23 @@
 </section> -->
 
   
-<!-- <section class="section">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-3">Experiment Setup</h2>
         <div class="content has-text-justified">
           <div class="columns">
-            <div class="column">
-              <img src="./static/images/quantative_1.png" alt="RLBench Simulation Results" style="width: 100%; height: auto;">
-              <p class="is-size-7 has-text-centered">Fine-grained manipulation in RLBench simulation.</p>
-            </div>
-            <div class="column">
-              <img src="./static/images/quantative_2.png" alt="COLOSSEUM Simulation Results" style="width: 100%; height: auto;">
-              <p class="is-size-7 has-text-centered">Fine-grained manipulation in COLOSSEUM simulation.</p>
-            </div>
+            <img src="./static/images/Fig4.png" alt="Setup" style="width: 100%; height: auto;">
           </div>
-
-          <ul class="content">
-            <li><strong>Simulation Benchmarks:</strong> ActiveVLA achieves a new state-of-the-art on RLBench with a <strong>91.8%</strong> average success rate, surpassing previous methods like BridgeVLA and 3D Diffuser Actor. It also dominates on the COLOSSEUM benchmark (robustness to perturbations) and GemBench (generalization).</li>
-            <li><strong>Real-World Robustness:</strong> As shown in the figures, ActiveVLA effectively handles complex real-world scenarios involving severe occlusions (e.g., retrieving a towel from layered drawers, grasping an occluded banana). By actively selecting viewpoints and zooming in, it can perceive fine-grained geometric details that static cameras miss.</li>
-            <li><strong>Ablation Studies:</strong> Experiments confirm that both Active View Selection (A-VS) and Active 3D Zoom-in (A-3Z) are crucial. A-VS guides <em>where</em> to look, and A-3Z determines <em>how closely</em> to observe, forming a powerful hierarchical perception strategy.</li>
-          </ul>
+          <p>
+            (a) RoboTwin 2.0 simulation (Aloha-AgileX, 4-camera RGB-D) under Clean (top) and Domain-Randomized (bottom) settings. (b) Dual-arm AgileX Piper with a 4-camera rig.
+          </p>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 <!-- Figure 3: Qualitative Results (Simulation) -->
 <section class="section">
@@ -288,7 +278,7 @@
         <h2 class="title is-4">Depth-Distribution Predictions</h2>
         <div class="content has-text-justified">
           <p>
-            We visualize the predicted discrete depth distribution per token (<code>depth_prob</code>) by first normalizing it into a probability distribution, then computing the expected depth map
+            We visualize the predicted discrete depth distribution per token by first normalizing it into a probability distribution, then computing the expected depth map
             <code>E[d] = Σ_d p(d) · bin(d)</code>
             using the depth bins, and finally normalizing the expected depth over the bin range and rendering it with a colormap. This allows a direct comparison of depth sharpness and completeness.
           </p>
@@ -305,7 +295,7 @@
 </section>
 
 <!-- Figure 4: Real-World Results -->
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -314,7 +304,6 @@
           <p>
             We evaluate ActiveVLA in real-world scenarios characterized by complex spatial structures and severe occlusions. This corresponds to <strong>Figure 4</strong> in the paper.
           </p>
-          <!-- 请确保图片路径正确，对应 Figure 4 -->
           <div class="has-text-centered">
             <img src="./static/images/visualization_2.png" alt="Real-world manipulation tasks" style="width: 100%; height: auto;">
           </div>
@@ -334,7 +323,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <footer class="footer">
   <div class="container">
