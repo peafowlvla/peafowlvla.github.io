@@ -184,10 +184,10 @@
       <!-- 使用 Flexbox 居中 -->
       <div class="has-text-centered">
         <!-- 请替换为 ActiveVLA 的 Figure 1 (teaser.png) -->
-        <img src="./static/images/teaser.png" alt="ActiveVLA Teaser" style="width: 80%; height: auto;">
+        <img src="./static/images/Fig2.png" alt="PEAfowl architecture" style="width: 80%; height: auto;">
       </div>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">ActiveVLA</span> vs. Previous Methods. Traditional VLA systems often fail in tasks like "bring the apples on the table" because fixed cameras miss critical details or become occluded. In contrast, <strong>ActiveVLA</strong> leverages 3D scene understanding to freely place virtual cameras and synthesize optimal viewpoints, enabling robots to adjust their view for clearer, more informative observations and thus achieve more reliable manipulation performance even under occlusion.
+        <span class="dnerf">PEAfowl architecture</span>. Traditional bimanual VLA systems often fail in cluttered, multi-object scenes because multi-view inputs are treated as view-agnostic token concatenations and language is injected only as global conditioning, leading to brittle 3D understanding and coarse, instruction-agnostic attention under occlusions and viewpoint shifts. In contrast, <strong>PEAfowl</strong> explicitly builds 3D-consistent multi-view representations via geometry-guided fusion (distributional depth, differentiable 3D lifting, and cross-view neighbor aggregation) and replaces global text conditioning with a text-as-query readout over frozen CLIP features, allowing the policy to retrieve instruction-relevant evidence and remain stable under scene variations. To further handle noisy and missing commodity depth in the real world, PEAfowl applies training-only depth distillation from a pretrained depth teacher—injecting geometry-aware priors with zero test-time overhead—resulting in more reliable bimanual manipulation and sim-to-real transfer even under challenging tasks.
       </h2>
     </div>
   </div>
