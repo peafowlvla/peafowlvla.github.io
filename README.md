@@ -6,9 +6,12 @@ Source for [peafowlvla.github.io](https://peafowlvla.github.io/), the project pa
 
 Accepted by **IEEE Robotics and Automation Letters (RA-L), 2026**.
 
+🏆 **Award:** Grand Prize (3rd Place), AI+ Special Competition (Challenge Track), the 19th "Challenge Cup" (China Mobile), based on an industry problem proposed by [Horizon Robotics](https://en.horizon.auto/).
+
 - [IEEE Xplore document 11661761](https://ieeexplore.ieee.org/document/11661761)
 - DOI: [10.1109/LRA.2026.3726379](https://doi.org/10.1109/LRA.2026.3726379)
-- [arXiv:2601.17885 v2](https://arxiv.org/abs/2601.17885), updated August 24, 2026
+- [arXiv:2601.17885](https://arxiv.org/abs/2601.17885)
+- [YouTube video](https://www.youtube.com/watch?v=nDeWHDPLbT8)
 - Public training repository: [Qingyu-Fan/PEAfowl](https://github.com/Qingyu-Fan/PEAfowl)
 - Real-robot deployment repository: [Qingyu-Fan/peafowl_ws](https://github.com/Qingyu-Fan/peafowl_ws)
 
