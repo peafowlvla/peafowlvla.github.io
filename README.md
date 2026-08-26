@@ -1,16 +1,31 @@
-# PEAfowl
+# PEAfowl project page
 
-This is the repository that contains source code for the [PEAfowl website](https://peafowlvla.github.io/).
+Source for [peafowlvla.github.io](https://peafowlvla.github.io/), the project page for:
 
-If you find PAPER_NAME useful for your work please cite:
+> **PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation**
+
+Accepted by **IEEE Robotics and Automation Letters (RA-L), 2026**.
+
+- [IEEE Xplore document 11661761](https://ieeexplore.ieee.org/document/11661761)
+- DOI: [10.1109/LRA.2026.3726379](https://doi.org/10.1109/LRA.2026.3726379)
+- [arXiv:2601.17885 v2](https://arxiv.org/abs/2601.17885), updated August 24, 2026
+- Public training repository: [Qingyu-Fan/PEAfowl](https://github.com/Qingyu-Fan/PEAfowl)
+- Real-robot deployment repository: [Qingyu-Fan/peafowl_ws](https://github.com/Qingyu-Fan/peafowl_ws)
+
+## Local preview
+
+This is a static site. From this directory, run any local HTTP server, for example:
+
+```bash
+python -m http.server 8000
 ```
-@article{todo
-  author    = {AUTHERS},
-  title     = {TITLE},
-  journal   = {JOURNAL_NAME},
-  year      = {YEAR},
-}
-```
 
-# Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+Then open <http://localhost:8000/>. Serving over HTTP (rather than opening `index.html` directly) keeps local asset loading consistent with GitHub Pages.
+
+## Maintaining the publication record
+
+Keep the author order, affiliations, DOI, and arXiv version synchronized with the publication record. The site does not currently host a dataset download link; add one only after a stable public release is available.
+
+## Website license
+
+The page content and original visual assets are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Third-party libraries under `static/` retain their respective licenses.

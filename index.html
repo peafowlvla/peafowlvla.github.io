@@ -1,135 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="google-site-verification" content="Io5PBEGCOEzWaL7oGOG-6-qHqYLZsvb7vAXvdoEF-1Y" />
   <meta charset="utf-8">
-  <meta name="description"
-        content="PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation">
-  <meta name="keywords" content="Spatial Perception, Vision-Language-Action, Robotic Manipulation, 3D Vision">
+  <meta name="description" content="PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation, accepted by IEEE Robotics and Automation Letters (RA-L), 2026.">
+  <meta name="keywords" content="PEAfowl, vision-language-action, bimanual manipulation, multi-view perception, robot learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation</title>
+  <meta name="citation_title" content="PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation">
+  <meta name="citation_author" content="Fan, Qingyu">
+  <meta name="citation_author" content="Li, Zhaoxiang">
+  <meta name="citation_author" content="Hu, Jinrui">
+  <meta name="citation_author" content="Lu, Yi">
+  <meta name="citation_author" content="Chen, Wang">
+  <meta name="citation_author" content="Shen, Qiu">
+  <meta name="citation_author" content="Long, Xiao-xiao">
+  <meta name="citation_author" content="Cai, Yinghao">
+  <meta name="citation_author" content="Lu, Tao">
+  <meta name="citation_author" content="Wang, Shuo">
+  <meta name="citation_author" content="Cao, Xun">
+  <meta name="citation_journal_title" content="IEEE Robotics and Automation Letters">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_doi" content="10.1109/LRA.2026.3726379">
+  <meta name="citation_abstract_html_url" content="https://ieeexplore.ieee.org/document/11661761">
+  <meta name="citation_arxiv_id" content="2601.17885">
+  <link rel="canonical" href="https://peafowlvla.github.io/">
+  <title>PEAfowl — Perception-Enhanced Multi-View VLA</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- 请替换为你自己的 Google Analytics ID，如果没有可以注释掉 -->
+  <meta name="google-site-verification" content="Io5PBEGCOEzWaL7oGOG-6-qHqYLZsvb7vAXvdoEF-1Y">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
-  <link rel="icon" type="image/svg+xml"
-  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%9A%3C/text%3E%3C/svg%3E">
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%9A%3C/text%3E%3C/svg%3E">
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
 </head>
+
 <body>
-
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">🦚PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="">Qingyu Fan</a><sup>1,2</sup>,</span>
-            <span class="author-block">
-              <a href="">Zhaoxiang Li</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://yeelou.github.io/">Yi Lu</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="">Wang Chen</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://shenqiu.njucite.cn/">Qiu Shen</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.xxlong.site/">Xiao-xiao Long</a><sup>2&#8224;</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://sites.google.com/site/caiyinghao">Yinghao Cai</a><sup>1&#8224;</sup>
-            </span>
-            <span class="author-block">
-              <a href="">Tao Lu</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=XL9j2UUAAAAJ&hl=zh-CN">Shuo Wang</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://cite.nju.edu.cn/People/Faculty/20190621/i5054.html">Xun Cao</a><sup>2</sup>
-            </span>
-          </div>
+          <h1 class="title is-2 publication-title">🦚 PEAfowl</h1>
+          <p class="subtitle is-4">Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation</p>
 
           <div class="is-size-5 publication-authors">
+            <span class="author-block">Qingyu Fan<sup>1</sup>,</span>
+            <span class="author-block">Zhaoxiang Li<sup>2,*</sup>,</span>
+            <span class="author-block">Jinrui Hu<sup>1,*</sup>,</span>
+            <span class="author-block">Yi Lu<sup>2</sup>,</span>
+            <span class="author-block">Wang Chen<sup>2</sup>,</span>
+            <span class="author-block">Qiu Shen<sup>2</sup>,</span>
+            <span class="author-block">Xiao-xiao Long<sup>2,†</sup>,</span>
+            <span class="author-block">Yinghao Cai<sup>1,†</sup>,</span>
+            <span class="author-block">Tao Lu<sup>1</sup>,</span>
+            <span class="author-block">Shuo Wang<sup>1</sup>,</span>
+            <span class="author-block">Xun Cao<sup>2</sup></span>
+          </div>
+          <div class="is-size-6 publication-authors mt-3">
             <span class="author-block"><sup>1</sup>Institute of Automation, Chinese Academy of Sciences</span><br>
-            <span class="author-block"><sup>2</sup>Nanjing University</span>
-          </div>
-          
-          <div class="is-size-6 publication-authors">
-            <span class="author-block"> <sup>&#8224;</sup>Corresponding authors.</span>
+            <span class="author-block"><sup>2</sup>Nanjing University</span><br>
+            <span class="author-block"><sup>*</sup>Equal contribution&nbsp;&nbsp; <sup>†</sup>Corresponding authors</span>
           </div>
 
-          <div class="is-size-5 publication-authors" style="color:#D4AF37;">
-            <span class="author-block">🏆Grand Prize (3rd Place), AI+ Special Competition (Challenge Track), The 19th “Challenge Cup” (China Mobile) (industry problem by <a href=https://en.horizon.auto>Horizon Robotics</a>)</span>
+          <div class="notification is-light mt-4">
+            <strong>Accepted by IEEE Robotics and Automation Letters (RA-L), 2026</strong>
           </div>
 
           <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2601.17885"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/kianyale/PEAfowl"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
-            </div>
-
+            <span class="link-block">
+              <a href="https://ieeexplore.ieee.org/document/11661761" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-book-open"></i></span><span>IEEE Xplore</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://doi.org/10.1109/LRA.2026.3726379" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-link"></i></span><span>DOI</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2601.17885" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span><span>arXiv v2</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/Qingyu-Fan/PEAfowl" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/Qingyu-Fan/peafowl_ws" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-robot"></i></span><span>Deployment</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#citation" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-quote-right"></i></span><span>Citation</span>
+              </a>
+            </span>
           </div>
         </div>
       </div>
@@ -137,211 +113,116 @@
   </div>
 </section>
 
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <img src="./static/images/Fig1.png" alt="Motivation and overview of PEAfowl" style="width:100%;height:auto;">
+      <p class="is-size-6 has-text-grey mt-2">Motivation and overview of PEAfowl.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- 视频部分 -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Overview</h2>
+        <p>
+          PEAfowl is a perception-enhanced multi-view vision-language-action policy for bimanual manipulation. It predicts per-token depth distributions, performs differentiable 3D lifting, and aggregates local cross-view neighbors to form geometrically grounded representations. A Perceiver-style text-aware readout over frozen CLIP visual features replaces global language conditioning with instruction-relevant evidence retrieval. During training only, a pretrained depth teacher provides supervision for the depth-distribution head; raw depth remains the policy input at training and inference, so there is no test-time teacher overhead.
+        </p>
+        <p>
+          On RoboTwin 2.0, PEAfowl improves the strongest baseline by <strong>23.0 percentage points</strong> in the domain-randomized setting. Physical experiments further show improved performance on the evaluated real-robot tasks.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation</h2>
-        <div class="content has-text-justified">
-          <div class="has-text-centered" style="position: relative;">
-            <center>
-                <iframe width="840" height="472.5"
-                        src="https://www.youtube.com/embed/nDeWHDPLbT8?si=qrpwgaQNRCzPpAT5"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </center>
-          </div>
-          <!-- 视频下方的说明文字 -->
-          <div style="text-align: left; max-width: 800px; margin: 1rem auto;">
+        <h2 class="title is-3 has-text-centered">Architecture</h2>
+        <figure class="image">
+          <img src="./static/images/Fig2.png" alt="PEAfowl architecture">
+        </figure>
+        <p class="has-text-centered is-size-6 has-text-grey mt-2">Geometry-guided multi-view fusion, language-guided perception, and diffusion action prediction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths content">
+        <h2 class="title is-3 has-text-centered">Evaluation</h2>
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-5">Simulation</h3>
+            <p>RoboTwin 2.0, 9 tasks, 50 demonstrations per task, and 100 rollouts per task and setting.</p>
             <ul>
-              <li><strong><em>From View-Agnostic Tokens to 3D-Consistent Fusion</em></strong>: Prior bimanual VLAs treat multi-view inputs as an orderless token set, yielding fragile spatial beliefs under occlusions and viewpoint shifts; PEAfowl enforces cross-view 3D alignment to produce consistent spatial tokens.</li>
-              <li><strong><em>From Noisy Depth as a Liability to Depth as a Prior</em></strong>: Commodity depth often destabilizes learning and hurts transfer; PEAfowl distills geometry-aware priors into per-token depth predictions during training, improving real-sensor robustness with zero test-time overhead.</li>
-              <li><strong><em>From Global Text Conditioning to Targeted Evidence Retrieval</em></strong>: Global language conditioning tends to be coarse and instruction-agnostic in clutter; PEAfowl uses text-as-query readout to retrieve and aggregate instruction-relevant visual evidence for sharper grounding.</li>
-              <li><strong><em>From Unstable Generalization to Reliable Multi-Task Transfer</em></strong>: Existing bimanual VLAs degrade sharply under multi-task learning and scene variations; PEAfowl delivers consistent gains in simulation and real-robot success across diverse tasks.</li>
+              <li>Clean: PEAfowl <strong>69.6%</strong> vs. SEM 51.0%.</li>
+              <li>Domain-randomized: PEAfowl <strong>47.1%</strong> vs. SEM 24.1%.</li>
+            </ul>
+          </div>
+          <div class="column">
+            <h3 class="title is-5">Real robot</h3>
+            <p>Dual-arm AgileX Piper with four Intel RealSense D435 RGB-D cameras; 6 evaluated tasks and 10 trials per task.</p>
+            <ul>
+              <li>PEAfowl: <strong>41/60 (68.3%)</strong>.</li>
+              <li>Without depth distillation: 22/60 (36.7%).</li>
+              <li>SEM: 7/60 (11.7%).</li>
             </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- <script>
-    // 控制视频声音按钮
-    const video = document.getElementById('activevla-video');
-    const btn = document.getElementById('unmute-btn');
-
-    btn.addEventListener('click', () => {
-      if (video.muted) {
-        video.muted = false;
-        btn.textContent = '关闭声音';
-      } else {
-        video.muted = true;
-        btn.textContent = '开启声音';
-      }
-      video.play();
-    });
-  </script> -->
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- 使用 Flexbox 居中 -->
-      <div class="has-text-centered">
-        <!-- 请替换为 ActiveVLA 的 Figure 1 (teaser.png) -->
-        <img src="./static/images/Fig2.png" alt="PEAfowl architecture" style="width: 80%; height: auto;">
-      </div>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">PEAfowl architecture</span>. Traditional bimanual VLA systems often fail in cluttered, multi-object scenes because multi-view inputs are treated as view-agnostic token concatenations and language is injected only as global conditioning, leading to brittle 3D understanding and coarse, instruction-agnostic attention under occlusions and viewpoint shifts. In contrast, <strong>PEAfowl</strong> explicitly builds 3D-consistent multi-view representations via geometry-guided fusion (distributional depth, differentiable 3D lifting, and cross-view neighbor aggregation) and replaces global text conditioning with a text-as-query readout over frozen CLIP features, allowing the policy to retrieve instruction-relevant evidence and remain stable under scene variations. To further handle noisy and missing commodity depth in the real world, PEAfowl applies training-only depth distillation from a pretrained depth teacher—injecting geometry-aware priors with zero test-time overhead—resulting in more reliable bimanual manipulation and sim-to-real transfer even under challenging tasks.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p align="center">
-            <img src="./static/images/Fig1.png" alt="" style="width:70%"></img>
-          </p>
-          <p>
-            Bimanual manipulation in cluttered scenes requires policies that remain stable under occlusions, viewpoint and scene variations. Existing vision-language-action models often fail to generalize because (i) multi-view features are fused via view-agnostic token concatenation, yielding weak 3D-consistent spatial understanding, and (ii) language is injected as global conditioning, resulting in coarse instruction grounding. In this paper, we introduce PEAfowl, a perception-enhanced multi-view VLA policy for bimanual manipulation. For spatial reasoning, PEAfowl predicts per-token depth distributions, performs differentiable 3D lifting, and aggregates local cross-view neighbors to form geometrically grounded, cross-view consistent representations. For instruction grounding, we propose to replace global conditioning with a Perceiver-style text-aware readout over frozen CLIP visual features, enabling iterative evidence accumulation. To overcome noisy and incomplete commodity depth without adding inference overhead, we apply training-only depth distillation from a pretrained depth teacher to supervise the depth-distribution head, providing perception front-end with geometry-aware priors. On RoboTwin 2.0 under domain-randomized setting, PEAfowl improves the strongest baseline by 23.0 pp in success rate, and real-robot experiments further demonstrate reliable sim-to-real transfer and consistent improvements from depth distillation.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
-
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">PEAfowl Architecture</h2>
-        <div class="content has-text-justified">
-          <div class="has-text-centered">
-            <img src="./static/images/Fig2.png" alt="PEAfowl architecture" style="width: 100%; height: auto;">
-          </div>
-          <p>
-            ActiveVLA adopts a two-stage, <strong>coarse-to-fine</strong> strategy. In the <strong>coarse stage</strong>, three orthographic projections of the 3D scene and a language instruction are processed by the VLM backbone (PaliGemma) to generate 2D heatmaps, which are then back-projected to locate the most relevant 3D region. 
-          </p>
-          <p>
-            In the <strong>fine stage</strong>, an <strong>Active Perception</strong> module takes over. It first performs <strong>Active Viewpoint Selection</strong> to choose new camera views that maximize visibility and diversity based on the identified region. Then, it executes an <strong>Active 3D Zoom-in</strong> strategy to render high-resolution details of the critical area. The refined visual inputs are fed back into the VLM to predict heatmaps for key end-effector positions, while an action decoder outputs the final 3D action (rotation, gripper state, etc.). This closed-loop design allows the robot to "look closer" before acting.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-  
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Experimental Setups</h2>
-        <div class="content has-text-justified">
-          <div class="columns">
-            <img src="./static/images/Fig4.png" alt="Setups" style="width: 100%; height: auto;">
-          </div>
-          <p>
-            (a) RoboTwin 2.0 simulation (Aloha-AgileX, 4-camera RGB-D) under Clean (top) and Domain-Randomized (bottom) settings. (b) Dual-arm AgileX Piper with a 4-camera rig.
-          </p>
-        </div>
+        <img src="./static/images/Fig4.png" alt="Simulation and real-world setups" style="width:100%;height:auto;">
+        <p class="has-text-centered is-size-6 has-text-grey mt-2">Simulation and real-world experimental setups.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Figure 3: Qualitative Results (Simulation) -->
-<section class="section">
+<section class="section pt-0">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Qualitative Results</h2>
-        <h2 class="title is-4">Cross-view Token Consistency</h2>
-        <div class="content has-text-justified">
-          <p>
-            We flatten the multi-view 2D tokens at the same feature level into a set of points, apply t-SNE to reduce the token embeddings to 3D, and then min–max normalize each dimension and map the resulting 3D coordinates directly to RGB channels. This produces a pseudo-colored “token image” for each view, which we use to inspect cross-view consistency.
-          </p>
-          <div class="has-text-centered">
-            <img src="./static/images/Fig5.png" alt="Cross-view Token Consistency" style="width: 100%; height: auto;">
-          </div>
-          <p>
-            SEM exhibits stripe-like color patterns that correlate more with image coordinates, with weak color correspondence for the same physical regions across views. PEAfowl (Before Aggregation) already reveals clearer object structures, but still shows cross-view drift. After Cross-View Aggregation, the same objects and regions become more color- and boundary-consistent across views, indicating stronger cross-view, 3D-consistent token alignment.
-          </p>
-        </div>
-        <h2 class="title is-4">Depth-Distribution Predictions</h2>
-        <div class="content has-text-justified">
-          <p>
-            We visualize the predicted discrete depth distribution per token by first normalizing it into a probability distribution, then computing the expected depth map
-            <code>E[d] = Σ_d p(d) · bin(d)</code>
-            using the depth bins, and finally normalizing the expected depth over the bin range and rendering it with a colormap. This allows a direct comparison of depth sharpness and completeness.
-          </p>
-          <div class="has-text-centered">
-            <img src="./static/images/Fig6.png" alt="Depth-Distribution Predictions" style="width: 100%; height: auto;">
-          </div>
-          <p>
-            SEM is more prone to blurred predictions and missing structures; PEAfowl w/o Depth Distillation already yields cleaner foreground contours; and full PEAfowl further improves boundary sharpness and region completeness, providing more stable geometric cues under noisy and incomplete commodity depth, which implicitly supports more reliable geometry-guided perception and downstream policy learning.
-          </p>
-        </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths content">
+        <h2 class="title is-3 has-text-centered">Qualitative analysis</h2>
+        <h3 class="title is-5">Cross-view token consistency</h3>
+        <p>Compared with SEM and pre-aggregation features, PEAfowl after cross-view aggregation produces more coherent representations for corresponding regions across cameras.</p>
+        <img src="./static/images/Fig5.png" alt="Cross-view token consistency" style="width:100%;height:auto;">
+        <h3 class="title is-5 mt-5">Depth-distribution predictions</h3>
+        <p>The depth-distribution head yields sharper and more complete geometric cues under noisy and incomplete commodity depth, with distillation used only during training.</p>
+        <img src="./static/images/Fig6.png" alt="Depth-distribution predictions" style="width:100%;height:auto;">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Figure 4: Real-World Results -->
-<!-- <section class="section">
+<section class="section" id="citation">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Real-World Experiments: Handling Severe Occlusions</h2>
-        <div class="content has-text-justified">
-          <p>
-            We evaluate ActiveVLA in real-world scenarios characterized by complex spatial structures and severe occlusions. This corresponds to <strong>Figure 4</strong> in the paper.
-          </p>
-          <div class="has-text-centered">
-            <img src="./static/images/visualization_2.png" alt="Real-world manipulation tasks" style="width: 100%; height: auto;">
-          </div>
-          <p>
-            The figure demonstrates ActiveVLA's capability in four challenging tasks:
-          </p>
-          <ul>
-            <li><strong>Pick up the banana (Occluded):</strong> The banana is hidden by other fruits. ActiveVLA changes the viewpoint to find it.</li>
-            <li><strong>Stack blocks (Occluded):</strong> The target red cube is hidden behind other blocks. The model finds a view to reveal it.</li>
-            <li><strong>Cup on holder (Occluded):</strong> The cup is obscured by the holder structure.</li>
-            <li><strong>Towel in drawer (Occluded):</strong> The towel is inside a drawer, requiring the robot to look inside.</li>
-          </ul>
-          <p>
-            In all cases, ActiveVLA actively perceives the environment to resolve ambiguities and precisely completes the tasks, demonstrating strong generalization to real-world constraints.
-          </p>
-        </div>
+        <h2 class="title is-3 has-text-centered">Citation</h2>
+        <p class="has-text-centered">Please cite the IEEE RA-L paper using its DOI.</p>
+        <pre><code>@article{fan2026peafowl,
+  title   = {PEAfowl: Perception-Enhanced Multi-View Vision-Language-Action for Bimanual Manipulation},
+  author  = {Fan, Qingyu and Li, Zhaoxiang and Hu, Jinrui and Lu, Yi and Chen, Wang and Shen, Qiu and Long, Xiao-xiao and Cai, Yinghao and Lu, Tao and Wang, Shuo and Cao, Xun},
+  journal = {IEEE Robotics and Automation Letters},
+  year    = {2026},
+  doi     = {10.1109/LRA.2026.3726379}
+}</code></pre>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 <footer class="footer">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content has-text-centered">
-          <p>
-            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>..
-          </p>
-        </div>
-      </div>
+    <div class="content has-text-centered">
+      <p>PEAfowl project page · <a href="https://github.com/Qingyu-Fan/PEAfowl">training code</a> · <a href="https://github.com/Qingyu-Fan/peafowl_ws">real-robot deployment</a> · Template adapted from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.</p>
     </div>
   </div>
 </footer>
-
 </body>
 </html>
